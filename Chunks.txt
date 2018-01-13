@@ -1,0 +1,5 @@
+The World class keeps track of all the chunks that are currently in use.
+Chunks that have not been used for a while will be unloaded.
+
+The engine asks for chunks that are near the player, so they can be draw. If there is no mesh it asks for one to be made.
+If World has no record of the chunk then it will be generated (loaded from disk or freshly made).

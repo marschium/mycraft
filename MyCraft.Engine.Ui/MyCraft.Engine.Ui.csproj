@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{43549532-65A1-4C08-8637-3D6598DD3321}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MyCraft.Engine.Ui</RootNamespace>
+    <AssemblyName>MyCraft.Engine.Ui</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="OpenTK, Version=2.0.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenTK.2.0.0\lib\net20\OpenTK.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Components\DebugComponent.cs" />
+    <Compile Include="Components\InventoryHotbarComponent.cs" />
+    <Compile Include="Components\InventoryComponents\ItemsBar.cs" />
+    <Compile Include="Components\Model2DComponent.cs" />
+    <Compile Include="Components\TextComponent.cs" />
+    <Compile Include="Components\InventoryComponents\SelectedItem.cs" />
+    <Compile Include="Components\UiComponent.cs" />
+    <Compile Include="FilterFlags.cs" />
+    <Compile Include="GameInterface.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Text.cs" />
+    <Compile Include="TextUtil.cs" />
+    <Compile Include="UIRenderer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OpenTK.dll.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyCraft.Assets\MyCraft.Assets.csproj">
+      <Project>{18605bda-6a26-4a6a-94b7-1d2d0d99a083}</Project>
+      <Name>MyCraft.Assets</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyCraft.Engine.Abstract\MyCraft.Engine.Abstract.csproj">
+      <Project>{8A6F65AC-3ABA-49F4-8DDF-DE09797C96DA}</Project>
+      <Name>MyCraft.Engine.Abstract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyCraft.Engine.Core\MyCraft.Engine.Core.csproj">
+      <Project>{50BE12F3-7F0C-4C75-AF34-FD8D93ECD76E}</Project>
+      <Name>MyCraft.Engine.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyCraft.Util\MyCraft.Util.csproj">
+      <Project>{F24FAA7A-0029-4618-8487-CA98CB8B0E0A}</Project>
+      <Name>MyCraft.Util</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="characters.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
